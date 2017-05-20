@@ -7,8 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SingleDayComponent } from './single-day/single-day.component';
 import { WeeklyViewComponent } from './weekly-view/weekly-view.component';
-import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
-
+import { HomeViewComponent } from './home-view/home-view.component';
 
 
 @NgModule({
@@ -16,7 +15,7 @@ import { DashboardViewComponent } from './dashboard-view/dashboard-view.componen
     AppComponent,
     SingleDayComponent,
     WeeklyViewComponent,
-    DashboardViewComponent
+    HomeViewComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +36,8 @@ import { DashboardViewComponent } from './dashboard-view/dashboard-view.componen
         component: WeeklyViewComponent
       },
       {
-        path: 'dashboard',
-        component: DashboardViewComponent
+        path: 'home',
+        component: HomeViewComponent
       }
     ])
   ],
