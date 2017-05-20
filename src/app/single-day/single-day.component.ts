@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { Day } from '../day';
 
 @Component({
   selector: 'app-single-day',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleDayComponent implements OnInit {
 
-  day: Date;
+  @Input() day: Day;
+  @Input() offset: number;
   constructor() { }
 
   ngOnInit() {
-    this.day = new Date();
+    // this.day = new Date();
   }
 
 }

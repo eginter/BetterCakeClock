@@ -1,6 +1,6 @@
 <p>
-  <span>
-    {{day.toDateString()}}
+  <span *ngIf="day">
+    {{day.date | amAdd: offset : 'days' | amDateFormat: 'LL'}}
     Start: <input type="time">
     End: <input type="time">
   </span>

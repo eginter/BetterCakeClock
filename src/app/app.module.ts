@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MomentModule } from 'angular2-moment';
 
 import { AppComponent } from './app.component';
 import { SingleDayComponent } from './single-day/single-day.component';
@@ -27,10 +28,11 @@ import { MdDatepickerModule, MdNativeDateModule, MdInputModule } from '@angular/
     MdDatepickerModule,
     MdNativeDateModule,
     MdInputModule,
+    MomentModule,
     RouterModule.forRoot([
       {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/home',
         pathMatch: 'full'
       },
       {

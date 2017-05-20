@@ -1,17 +1,21 @@
-<md-input-container>
-  <input  mdInput [mdDatepicker]="myDatepicker">
-  <button mdSuffix [mdDatepickerToggle]="myDatepicker"></button>
-</md-input-container>
-<md-datepicker #myDatepicker></md-datepicker>
+<div>
+  <md-input-container>
+    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date"
+           [(ngModel)]="day.date">
+    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+  </md-input-container>
+  <md-datepicker #picker></md-datepicker>
+</div>
 
-<!--<div *ngIf="selectedDay">-->
-  <!--<ul>-->
-    <!--<li><app-single-day></app-single-day></li>-->
-    <!--<li><app-single-day></app-single-day></li>-->
-    <!--<li><app-single-day></app-single-day></li>-->
-    <!--<li><app-single-day></app-single-day></li>-->
-    <!--<li><app-single-day></app-single-day></li>-->
-    <!--<li><app-single-day></app-single-day></li>-->
-    <!--<li><app-single-day></app-single-day></li>-->
-  <!--</ul>-->
-<!--</div>-->
+<div *ngIf="day.date">
+  <p> Week of: {{day.date | amDateFormat:'LL'}} - {{day.date | amAdd: 6 : 'days' | amDateFormat: 'LL'}}</p>
+  <ul>
+    <li><app-single-day [day]="day" [offset]="0"></app-single-day></li>
+    <li><app-single-day [day]="day" [offset]="1"></app-single-day></li>
+    <li><app-single-day [day]="day" [offset]="2"></app-single-day></li>
+    <li><app-single-day [day]="day" [offset]="3"></app-single-day></li>
+    <li><app-single-day [day]="day" [offset]="4"></app-single-day></li>
+    <li><app-single-day [day]="day" [offset]="5"></app-single-day></li>
+    <li><app-single-day [day]="day" [offset]="6"></app-single-day></li>
+  </ul>
+</div>
