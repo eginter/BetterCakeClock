@@ -1,0 +1,12 @@
+<div>
+  <md-input-container>
+    <input mdInput [mdDatepicker]="picker" placeholder="Choose a date"
+           [(ngModel)]="day.date">
+    <button mdSuffix [mdDatepickerToggle]="picker"></button>
+  </md-input-container>
+  <md-datepicker #picker></md-datepicker>
+</div>
+
+<p>
+  <app-single-day [day]="day" [offset]="0"></app-single-day>
+</p>

@@ -12,6 +12,7 @@ import { WeeklyViewComponent } from './weekly-view/weekly-view.component';
 import { HomeViewComponent } from './home-view/home-view.component';
 
 import { MdDatepickerModule, MdNativeDateModule, MdInputModule } from '@angular/material';
+import { DailyViewComponent } from './daily-view/daily-view.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MdDatepickerModule, MdNativeDateModule, MdInputModule } from '@angular/
     SingleDayComponent,
     WeeklyViewComponent,
     HomeViewComponent,
+    DailyViewComponent,
   ],
   imports: [
     BrowserAnimationsModule,
@@ -37,7 +39,7 @@ import { MdDatepickerModule, MdNativeDateModule, MdInputModule } from '@angular/
       },
       {
         path: 'daily',
-        component: SingleDayComponent
+        component: DailyViewComponent
       },
       {
         path: 'weekly',

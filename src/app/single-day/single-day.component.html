@@ -1,7 +1,10 @@
-<p>
-  <span *ngIf="day">
+<p *ngIf="day">
     {{day.date | amAdd: offset : 'days' | amDateFormat: 'LL'}}
-    Start: <input type="time">
-    End: <input type="time">
-  </span>
+    <md-input-container *ngIf="day">
+  Start: <input mdInput type="time">
+</md-input-container>
+  <md-input-container *ngIf="day">
+    End: <input mdInput type="time">
+  </md-input-container>
+
 </p>
