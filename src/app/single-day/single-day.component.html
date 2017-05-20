@@ -1,10 +1,10 @@
-<p *ngIf="day">
-    {{day.date | amAdd: offset : 'days' | amDateFormat: 'LL'}}
-    <md-input-container *ngIf="day">
-  Start: <input mdInput type="time">
-</md-input-container>
-  <md-input-container *ngIf="day">
-    End: <input mdInput type="time">
-  </md-input-container>
+<li *ngIf="day">
+  {{day.date | amAdd: offset : 'days' | amDateFormat: 'LL'}}
+  <!--<md-input-container *ngIf="day">-->
+    Hours: <input [(ngModel)]="day.hours" type="number" placeholder="0">
+  <!--</md-input-container>-->
+  <!--<md-input-container *ngIf="day">-->
+    Minutes: <input [(ngModel)]="day.minutes" type="number" placeholder="0">
+  <!--</md-input-container>-->
 
-</p>
+</li>

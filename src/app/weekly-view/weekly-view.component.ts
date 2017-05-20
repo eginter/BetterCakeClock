@@ -1,5 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import { MdDatepicker } from '@angular/material';
+import {Component, OnInit, OnChanges} from '@angular/core';
 import { Day } from '../day';
 
 @Component({
@@ -7,25 +6,33 @@ import { Day } from '../day';
   templateUrl: './weekly-view.component.html',
   styleUrls: ['./weekly-view.component.css']
 })
-export class WeeklyViewComponent implements OnInit {
-
-  @ViewChild(MdDatepicker) dp: MdDatepicker<Date>;
+export class WeeklyViewComponent implements OnInit, OnChanges {
 
   day: Day;
+  list: Day[] = [];
+  total: number;
 
   constructor() {
+
   }
 
   ngOnInit() {
-    this.day = new Day(new Date);
+    this.day = new Day(new Date());
+    for (let i = 0; i < 7; i++ ) {
+      this.list.push(new Day(new Date()));
+    }
+    console.log(this.list);
   }
-
-  addDays(numberOfDays: number): Day {
-    return new Day(new Date(this.day.date.getDate() + numberOfDays));
+  updateTotalTime(): void {
+    this.total = 0;
+    for (let i = 0; i < this.list.length; i++) {
+      if (this.list[i].getTotalMinutes()){
+        this.total += this.list[i].getTotalMinutes();
+      }
+    }
   }
-  // updateDate(date: Date): void {
-  //   this.day.date = date;
-  //   console.log('the date ' +  this.date);
-  // }
+  ngOnChanges(){
+    this.updateTotalTime();
+  }
 
 }

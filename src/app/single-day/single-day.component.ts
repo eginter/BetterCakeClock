@@ -10,10 +10,13 @@ export class SingleDayComponent implements OnInit {
 
   @Input() day: Day;
   @Input() offset: number;
+
   constructor() { }
 
   ngOnInit() {
     // this.day = new Date();
   }
+
+
 
 }

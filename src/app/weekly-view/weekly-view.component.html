@@ -9,13 +9,8 @@
 
 <div *ngIf="day.date">
   <p> Week of: {{day.date | amDateFormat:'LL'}} - {{day.date | amAdd: 6 : 'days' | amDateFormat: 'LL'}}</p>
-  <ul>
-    <li><app-single-day [day]="day" [offset]="0"></app-single-day></li>
-    <li><app-single-day [day]="day" [offset]="1"></app-single-day></li>
-    <li><app-single-day [day]="day" [offset]="2"></app-single-day></li>
-    <li><app-single-day [day]="day" [offset]="3"></app-single-day></li>
-    <li><app-single-day [day]="day" [offset]="4"></app-single-day></li>
-    <li><app-single-day [day]="day" [offset]="5"></app-single-day></li>
-    <li><app-single-day [day]="day" [offset]="6"></app-single-day></li>
+  <ul (click)="updateTotalTime()">
+    <app-single-day *ngFor="let item of list; let i = index;" [day]="item" [offset]="i"></app-single-day>
   </ul>
+  <p *ngIf="total"> Total time: {{ total / 60 }} hours. </p>
 </div>
