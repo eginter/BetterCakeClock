@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./weekly-view.component.css']
 })
 export class WeeklyViewComponent implements OnInit {
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  onSelect(day: Date): void {
+    console.log('setting day' + day);
   }
 
 }

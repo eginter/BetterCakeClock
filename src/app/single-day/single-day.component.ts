@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleDayComponent implements OnInit {
 
+  day: Date;
   constructor() { }
 
   ngOnInit() {
+    this.day = new Date();
   }
 
 }
